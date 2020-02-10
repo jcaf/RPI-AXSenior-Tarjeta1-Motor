@@ -1,0 +1,133 @@
+# depslib dependency file v1.0
+1580487877 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/fuse.c
+	<avr/io.h>
+
+1581269801 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/SWseriale.c
+	"SWseriale.h"
+
+1581269918 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/SWseriale.h
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<avr/sfr_defs.h>
+
+1580565914 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/usart/usart.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	"usart.h"
+	<avr/pgmspace.h>
+
+1581291249 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/usart/usart.h
+
+1580604915 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/main1.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/sfr_defs.h>
+	<string.h>
+	<stdlib.h>
+	<stdint.h>
+	<util/delay.h>
+	"SWseriale.h"
+	"usart/usart.h"
+	"voltage.h"
+	"main.h"
+	"adc/adc.h"
+
+1580603158 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/voltage.h
+
+1580603041 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/main.h
+
+1556055799 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/adc/adc.h
+
+1580694911 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/adc/adc.c
+	"../system.h"
+	"adc.h"
+
+1581272700 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/system.h
+	<xc.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<util/delay.h>
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+
+1580691411 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/voltage.c
+	<avr/io.h>
+	"system.h"
+	"main.h"
+	"voltage.h"
+	"adc/adc.h"
+
+1581206032 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/ads1115/ads1115.c
+
+1581206719 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/main.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/sfr_defs.h>
+	<string.h>
+	<stdlib.h>
+	"system.h"
+	<util/delay.h>
+	"SWseriale.h"
+	"usart/usart.h"
+	"voltage.h"
+	"main.h"
+	"adc/adc.h"
+	"types.h"
+	"i2c/I2C.h"
+	"i2c/I2CCommonFx.h"
+	"ads1115/ads1115.h"
+
+1581206857 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/types.h
+	<stdint.h>
+
+1581206783 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/i2c/I2C.h
+	"../types.h"
+
+1539713378 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/i2c/I2CCommonFx.h
+
+1581266655 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/ads1115/ads1115.h
+
+1581206891 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/i2c/I2C.c
+	"../system.h"
+	"../types.h"
+	"I2C.h"
+
+1581206893 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/i2c/I2CCommonFx.c
+	"../system.h"
+	"../types.h"
+	"I2C.h"
+	"I2CCommonFx.h"
+
+1581288319 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/corriente.c
+	"system.h"
+	"main.h"
+	"corriente.h"
+	"ads1115/ads1115.h"
+
+1581288044 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/corriente.h
+
+1581300371 source:/run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/main2.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/sfr_defs.h>
+	<string.h>
+	<stdlib.h>
+	"system.h"
+	<util/delay.h>
+	"SWseriale.h"
+	"usart/usart.h"
+	"voltage.h"
+	"main.h"
+	"adc/adc.h"
+	"types.h"
+	"i2c/I2C.h"
+	"i2c/I2CCommonFx.h"
+	"ads1115/ads1115.h"
+	"corriente.h"
+	"temperatura.h"
+
+1581299931 /run/media/jcaf/pleasure/PROYECTOS/ATMEL/C/SoftwareSerial_v1/SoftwareSerial_v1/temperatura.h
+
