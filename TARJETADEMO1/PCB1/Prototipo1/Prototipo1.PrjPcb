@@ -207,6 +207,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ETALEXAD
 
+[Document11]
+DocumentPath=Prototipo1A.PCBDwf
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Prototipo1\Design Rule Check - Prototipo1A.html
 DItemRevisionGUID=
