@@ -1,0 +1,131 @@
+# depslib dependency file v1.0
+1580694911 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/adc/adc.c
+	"../system.h"
+	"adc.h"
+
+1581272700 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/system.h
+	<xc.h>
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<avr/eeprom.h>
+	<util/delay.h>
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+
+1556055799 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/adc/adc.h
+
+1581206032 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/ads1115/ads1115.c
+
+1582508927 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/corriente.c
+	"system.h"
+	"main.h"
+	"corriente.h"
+	"types.h"
+	"ads1115/ads1115.h"
+	"i2c/I2CCommonFx.h"
+
+1582562964 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/main.h
+
+1581288044 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/corriente.h
+
+1581206857 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/types.h
+	<stdint.h>
+
+1581351531 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/ads1115/ads1115.h
+
+1582483490 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/i2c/I2CCommonFx.h
+	"../types.h"
+
+1582482094 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/ds3231/DS3231.c
+	"DS3231.h"
+	"../system.h"
+	"../utils/utils.h"
+
+1548175098 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/ds3231/DS3231.h
+	"../i2c/I2CCommonFx.h"
+
+1547569893 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/utils/utils.h
+	<stdint.h>
+
+1582565655 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/i2c/I2C.c
+	"../main.h"
+	"../system.h"
+	"../types.h"
+	"I2C.h"
+	"../usart/usart.h"
+
+1582566082 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/i2c/I2C.h
+	"../types.h"
+
+1581206893 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/i2c/I2CCommonFx.c
+	"../system.h"
+	"../types.h"
+	"I2C.h"
+	"I2CCommonFx.h"
+
+1581352814 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/rpm.c
+	"system.h"
+	"main.h"
+	"rpm.h"
+
+1581351490 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/rpm.h
+
+1581370253 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/SWseriale.c
+	"SWseriale.h"
+
+1581370266 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/SWseriale.h
+	<avr/interrupt.h>
+	<avr/pgmspace.h>
+	<avr/sfr_defs.h>
+
+1582411114 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/temperatura.c
+	"system.h"
+	"main.h"
+	"adc/adc.h"
+
+1580565914 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/usart/usart.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	"usart.h"
+	<avr/pgmspace.h>
+
+1581291249 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/usart/usart.h
+
+1547569833 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/utils/utils.c
+	"utils.h"
+
+1580691411 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/voltage.c
+	<avr/io.h>
+	"system.h"
+	"main.h"
+	"voltage.h"
+	"adc/adc.h"
+
+1581351118 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/voltage.h
+
+1582567658 source:/run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/main3.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<avr/sfr_defs.h>
+	<string.h>
+	<stdlib.h>
+	"system.h"
+	<util/delay.h>
+	"SWseriale.h"
+	"usart/usart.h"
+	"voltage.h"
+	"main.h"
+	"adc/adc.h"
+	"types.h"
+	"i2c/I2C.h"
+	"i2c/I2CCommonFx.h"
+	"ds3231/DS3231.h"
+	"ads1115/ads1115.h"
+	"corriente.h"
+	"temperatura.h"
+	"rpm.h"
+
+1581299931 /run/media/jcaf/pleasure/PROYECTOS/RASPBERRY_PI/AXSENIORS/TARJETADEMO1/FIRMWARE1/Atmega/SoftwareSerial_v1/AxSenior_IotBoard_1/temperatura.h
+

@@ -1,4 +1,4 @@
-
+#include "../main.h"
 #include "../system.h"
 #include "../types.h"
 #include "I2C.h"
@@ -178,8 +178,34 @@ int8_t I2C_unimaster_rx_data(byte PrepararACK_NACK)
 /********************************************************************************
 
 ********************************************************************************/
+#include "../usart/usart.h"
 void I2C_unimaster_error_handler(byte _TWSR_ERROR_CODE_)
 {
+//+-----------------------------------------
+PinTo1(PORTC,3);
+
+serialPrint("Error: ", strlen("Error: "));
+
+char errorchar[10];
+utoa(_TWSR_ERROR_CODE_, errorchar, 10);
+serialPrint(errorchar, strlen(errorchar));
+serialPrint("\n", 1);
+
+uint8_t v = _TWSR_ERROR_CODE_;
+int i;
+for (i=0; i<8; i++)
+{
+    if (v & 0x80)
+        {serialPrint("1",strlen("1"));}
+    else
+        {serialPrint("0",strlen("0"));}
+
+    v <<=1;
+}
+
+serialPrint("\nFIN\n", strlen("\nFIN\n"));
+//+-----------------------------------------
+
     I2C_unimaster_stop();
 
     switch (_TWSR_ERROR_CODE_)
@@ -210,6 +236,8 @@ void I2C_unimaster_error_handler(byte _TWSR_ERROR_CODE_)
     case  I2C_STATUS_BUS_ERROR_ILLEGAL_START_STOP:	//(0x00)
         break;
     }
+
+while(1);
 }
 
 

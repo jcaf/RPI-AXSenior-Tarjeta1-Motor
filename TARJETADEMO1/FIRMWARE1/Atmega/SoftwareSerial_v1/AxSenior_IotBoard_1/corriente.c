@@ -36,7 +36,7 @@ void Irms_get(void)
             //reset
             i_Tintegrt = 0x00;
             i_N = 0x00;
-            i_sumatoria = 0x00;
+            i_sumatoria = 0;
         }
     }
 }

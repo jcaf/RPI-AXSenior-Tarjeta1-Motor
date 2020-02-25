@@ -54,13 +54,18 @@ ads1115 @860hz -> 14.33 samples
     EESAVE DISABLE
     EEPROM memory is preserved through chip erase
     [root@JCAFPC Release]# avrdude -c usbasp -B10 -p m328p -U lfuse:w:0xff:m -U hfuse:w:0xdf:m
-    [root@JCAFPC Release]# avrdude -c usbasp -B10 -p m328p -U efuse:w:0xfd:m
+    [root@JCAFPC Release]# avrdude -c usbasp -B10 -p m328p -U
+
+    avrdude -c usbasp -B10 -p m328p -U lfuse:w:0xff:m -U hfuse:w:0xdf:m -U efuse:w:0xfd:m
+
+    avrdude -c dragon_isp -B 0.3 -P usb -p atmega328p -U lfuse:w:0xff:m -U hfuse:w:0xdf:m -U efuse:w:0xfd:m
 
     2) GRABAR EL CODIGO FUENTE CON EL COMANDO ACOSTUMBRADO
     [root@JCAFPC Release]# avrdude -c usbasp -B5 -p m328p -U flash:w:atmega328p.hex
     [root@JCAFPC Release]# avrdude -c usbasp -B5 -p m328p -V -U flash:w:atmega328p.hex (SIN VERIFICAR)
     [jcaf@JCAFPC Release]$ avrdude -c usbasp -B5 -p m328p (ONLY A RESET)
 
+    avrdude -c dragon_isp -B 0.3 -P usb -p atmega328p -V -U -U flash:w:
     NUEVO
     [root@JCAFPC Release]# avrdude -c usbasp -B0.3 -p m328p -V -U flash:w:atmega328p.hex (MAS RAPIDO!)
     Tambien puede ser sin -BX.. cuando ya esta bien configurado los fuses:
@@ -136,12 +141,6 @@ union
         uint16_t ;
     };
 */
-#define SOFTSERIAL
-#ifdef SOFTSERIAL
-#define serialPrint(str,strlen) do{SWseriale_write( str, strlen);}while(0)
-#else
-#define serialPrint(str,strlen) do{usart_print_string(str);}while(0)
-#endif // SOFTSERIAL
 
 int main(void)
 {
@@ -154,7 +153,7 @@ int main(void)
     struct _DS3231_time_bin time_bin;
     struct _DS3231_date_bin date_bin;
     char buff[5];
-    char strTimeDate[30];
+    //char strTimeDate[30];
     //-+
 
     ConfigInputPin(DDRxINT0, PIN_INT0);
@@ -162,7 +161,6 @@ int main(void)
 
     //UART by hardware
     USART_Init ( MYUBRR );//@9600
-
 
 
     voltage_init();
@@ -180,18 +178,18 @@ int main(void)
     BitTo0(EICRA, 0);
     BitTo1(EIMSK,0);//Enabling Interrupt
     //////////////////////////////////////////
-    SWseriale_begin(); // Initialize INT1, Timer2, Pin 3 (Input, Pull-up) and Pin 4 (Output)
+    //SWseriale_begin(); // Initialize INT1, Timer2, Pin 3 (Input, Pull-up) and Pin 4 (Output)
     sei();
     /////////////////////////////////
-    ConfigOutputPin(DDRD,7);//PD7 AS OUTPUT FOR LED!
+    ConfigOutputPin(DDRC,3);//PC3 AS OUTPUT FOR LED!
 
     ///////////////
     I2C_unimaster_init(100E3);//100KHz
     uint8_t reg[2];
 
     DS3231_init();
-    //DS3231_set_date(DS3231_SUNDAY_BCD,23,02,20);
-    //DS3231_set_time(14,01,0, DS3231_24_HOUR_MODE, DS3231_PM);
+    //DS3231_set_date(DS3231_MONDAY_BCD,24,02,20);
+    //DS3231_set_time(18,42,0, DS3231_24_HOUR_MODE, DS3231_PM);
 
 
     //++--Write config
@@ -199,7 +197,7 @@ int main(void)
     reg[1] = (DR_860SPS<<DR_BIT);
     I2Ccfx_WriteArray(ADS115_ADR_GND,ADS1115_CONFIG_REG, &reg[0], 2);
     //default state of ConfigRegister = 0x8583 = 34179
-
+//I2C_unimaster_error_handler(0xA8); while (1);
 
     while (1)
     {
@@ -209,8 +207,11 @@ int main(void)
             main_flag.f20ms = 1;
         }
         /////////////////////////
+
         process_voltage();//udpate internamente volt
+//PinTo1(PORTC,3);
         Irms_get();
+//PinTo0(PORTC,3);//;LED
         temp_process();
         RPM_process();
 
@@ -220,6 +221,7 @@ int main(void)
             if (++cdelay >= 100)//20*100 = 2000
             {
                 cdelay = 0;
+
 
                 //
                 strcpy(str,"#");
@@ -241,12 +243,12 @@ int main(void)
                 //RPM
                 utoa(RPM, outbuff, 10);
                 strcat(str, outbuff);
-                strcat(str, "\n");
-
-                serialPrint( (uint8_t *)str, strlen(str) );
+                //strcat(str, "\n");
+                strcat(str, " ");
+                //serialPrint( (uint8_t *)str, strlen(str) );
 
                 //
-                PinToggle(PORTD,7);
+                //PinToggle(PORTC,3);
 
                 //added RTC
 
@@ -255,31 +257,33 @@ int main(void)
 
                 //time:"23:12:21", hour="23/25/20"
                 itoa(time_bin.hour, buff, 10);
-                strcpy(strTimeDate, buff);
-                strcat(strTimeDate, ":");
+                strcat(str, buff);
+                strcat(str, ":");
 
                 itoa(time_bin.min, buff, 10);
-                strcat(strTimeDate, buff);
-                strcat(strTimeDate, ":");
+                strcat(str, buff);
+                strcat(str, ":");
 
                 itoa(time_bin.sec, buff, 10);
-                strcat(strTimeDate, buff);
-                strcat(strTimeDate, " ");
+                strcat(str, buff);
+                strcat(str, " ");
                 //
                 itoa(date_bin.date, buff, 10);
-                strcat(strTimeDate, buff);
-                strcat(strTimeDate, "/");
+                strcat(str, buff);
+                strcat(str, "/");
 
                 itoa(date_bin.month, buff, 10);
-                strcat(strTimeDate, buff);
-                strcat(strTimeDate, "/");
+                strcat(str, buff);
+                strcat(str, "/");
 
                 itoa(date_bin.year, buff, 10);
-                strcat(strTimeDate, buff);
-                strcat(strTimeDate, " ");
+                strcat(str, buff);
 
-                strcat(strTimeDate, "\n");
-                serialPrint(strTimeDate, strlen(strTimeDate));
+                strcat(str, "\n");
+                serialPrint(str, strlen(str));
+
+                //
+
             }
         }
         //

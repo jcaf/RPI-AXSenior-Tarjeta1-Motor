@@ -64,7 +64,7 @@ int8_t I2C_unimaster_tx_data(byte Data);
 int8_t I2C_unimaster_tx_addrslave(byte SlaveAddress_RW);
 int8_t I2C_unimaster_rx_data(byte PrepararACK_NACK);
 
-
+void I2C_unimaster_error_handler(byte _TWSR_ERROR_CODE_);
 #endif
 
 
